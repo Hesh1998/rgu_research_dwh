@@ -15,8 +15,7 @@ CREATE TABLE dwh.bronze.customer (
   gender       STRING,
   name         STRING,
   state        STRING,
-  country      STRING,
-  birthday     DATE
+  country      STRING
 )
 
 CREATE TABLE dwh.bronze.currency (
