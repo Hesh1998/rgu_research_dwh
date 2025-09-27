@@ -1,0 +1,45 @@
+CREATE TABLE dwh.bronze.sales (
+  order_number   INT,
+  line_item      INT,
+  order_date     DATE,
+  delivery_date  DATE,
+  customer_key   INT,
+  store_key      INT,
+  product_key    INT,
+  quantity       INT,
+  currency_code  STRING
+)
+
+CREATE TABLE dwh.bronze.customer (
+  customer_key INT,
+  gender       STRING,
+  name         STRING,
+  state        STRING,
+  country      STRING,
+  birthday     DATE
+)
+
+CREATE TABLE dwh.bronze.currency (
+  date      DATE,
+  currency  STRING,
+  exchange  DECIMAL(8,5)
+)
+
+CREATE TABLE dwh.bronze.product (
+  product_key     INT,
+  product_name    STRING,
+  brand           STRING,
+  color           STRING,
+  unit_cost_usd   DECIMAL(10,2),
+  unit_price_usd  DECIMAL(10,2),
+  subcategory     STRING,
+  category        STRING
+)
+
+CREATE TABLE dwh.bronze.store (
+  store_key      INT,
+  country        STRING,
+  state          STRING,
+  square_meters  INT,
+  open_date      DATE
+)
