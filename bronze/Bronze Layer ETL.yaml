@@ -1,0 +1,28 @@
+resources:
+  jobs:
+    Bronze_Layer_ETL:
+      name: Bronze Layer ETL
+      tasks:
+        - task_key: bronze_currency_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/bronze/bronze_currency_etl
+            source: WORKSPACE
+        - task_key: bronze_customer_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/bronze/bronze_customer_etl
+            source: WORKSPACE
+        - task_key: bronze_product_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/bronze/bronze_product_etl
+            source: WORKSPACE
+        - task_key: bronze_sales_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/bronze/bronze_sales_etl
+            source: WORKSPACE
+        - task_key: bronze_store_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/bronze/bronze_store_etl
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
