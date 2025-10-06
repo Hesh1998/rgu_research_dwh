@@ -41,11 +41,3 @@ CREATE TABLE dwh.silver.currency_dim (
 	exchange DECIMAL(8,5)
 )
 
-
-
-
-
-
-
-	category_sk BIGINT
-)
