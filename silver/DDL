@@ -34,25 +34,14 @@ CREATE TABLE dwh.silver.product_dim (
 	category_sk BIGINT
 )
 
+CREATE TABLE dwh.silver.currency_dim (
+	currency_sk BIGINT GENERATED ALWAYS AS IDENTITY,
+	date DATE,
+	currency STRING,
+	exchange DECIMAL(8,5)
+)
 
 
-
-
-
-
-CREATE TABLE dwh.silver.product_dim (
-	product_sk INT,
-	product_name STRING,
-
-
-
-
-
-
-	brand STRING,
-	color STRING,
-	unit_cost_usd DECIMAL(10,2),
-	unit_price_usd DECIMAL(10,2),
 
 
 
