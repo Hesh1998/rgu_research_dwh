@@ -10,3 +10,10 @@ CREATE TABLE dwh.silver.customer_dim (
 	name STRING,
 	country_state_sk BIGINT
 )
+
+CREATE TABLE dwh.silver.store_dim (
+	store_sk INT,
+	country_state_sk BIGINT,
+	square_meters INT,
+	open_date DATE
+)
