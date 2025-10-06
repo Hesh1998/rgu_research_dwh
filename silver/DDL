@@ -23,3 +23,40 @@ CREATE TABLE dwh.silver.category_dim (
 	category STRING,
 	subcategory STRING
 )
+
+CREATE TABLE dwh.silver.product_dim (
+	product_sk INT,
+	product_name STRING,
+	brand STRING,
+	color STRING,
+	unit_cost_usd DECIMAL(10,2),
+	unit_price_usd DECIMAL(10,2),
+	category_sk BIGINT
+)
+
+
+
+
+
+
+
+CREATE TABLE dwh.silver.product_dim (
+	product_sk INT,
+	product_name STRING,
+
+
+
+
+
+
+	brand STRING,
+	color STRING,
+	unit_cost_usd DECIMAL(10,2),
+	unit_price_usd DECIMAL(10,2),
+
+
+
+
+
+	category_sk BIGINT
+)
