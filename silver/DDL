@@ -17,3 +17,9 @@ CREATE TABLE dwh.silver.store_dim (
 	square_meters INT,
 	open_date DATE
 )
+
+CREATE TABLE dwh.silver.category_dim (
+	category_sk BIGINT GENERATED ALWAYS AS IDENTITY,
+	category STRING,
+	subcategory STRING
+)
