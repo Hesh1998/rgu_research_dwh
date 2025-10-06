@@ -1,0 +1,47 @@
+resources:
+  jobs:
+    Silver_Layer_ETL:
+      name: Silver Layer ETL
+      tasks:
+        - task_key: silver_category_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_category_dim_etl
+            source: WORKSPACE
+        - task_key: silver_country_state_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_country_state_dim_etl
+            source: WORKSPACE
+        - task_key: silver_currency_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_currency_dim_etl
+            source: WORKSPACE
+        - task_key: silver_customer_dim_etl
+          depends_on:
+            - task_key: silver_country_state_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_customer_dim_etl
+            source: WORKSPACE
+        - task_key: silver_product_dim_etl
+          depends_on:
+            - task_key: silver_category_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_product_dim_etl
+            source: WORKSPACE
+        - task_key: silver_store_dim_etl
+          depends_on:
+            - task_key: silver_country_state_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_store_dim_etl
+            source: WORKSPACE
+        - task_key: silver_sales_fact_etl
+          depends_on:
+            - task_key: silver_customer_dim_etl
+            - task_key: silver_store_dim_etl
+            - task_key: silver_product_dim_etl
+            - task_key: silver_currency_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/silver/silver_sales_fact_etl
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
