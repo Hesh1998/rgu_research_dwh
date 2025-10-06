@@ -1,0 +1,5 @@
+CREATE TABLE dwh.silver.country_state_dim (
+	country_state_sk BIGINT GENERATED ALWAYS AS IDENTITY,
+	country STRING,
+	state STRING
+)
