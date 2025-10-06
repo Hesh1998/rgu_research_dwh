@@ -3,3 +3,10 @@ CREATE TABLE dwh.silver.country_state_dim (
 	country STRING,
 	state STRING
 )
+
+CREATE TABLE dwh.silver.customer_dim (
+	customer_sk INT,
+	gender STRING,
+	name STRING,
+	country_state_sk BIGINT
+)
