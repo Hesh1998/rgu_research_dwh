@@ -1,0 +1,47 @@
+resources:
+  jobs:
+    Gold_Layer_ETL:
+      name: Gold Layer ETL
+      tasks:
+        - task_key: gold_category_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_category_dim_etl
+            source: WORKSPACE
+        - task_key: gold_country_state_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_country_state_dim_etl
+            source: WORKSPACE
+        - task_key: gold_currency_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_currency_dim_etl
+            source: WORKSPACE
+        - task_key: gold_customer_dim_etl
+          depends_on:
+            - task_key: gold_country_state_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_customer_dim_etl
+            source: WORKSPACE
+        - task_key: gold_product_dim_etl
+          depends_on:
+            - task_key: gold_category_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_product_dim_etl
+            source: WORKSPACE
+        - task_key: gold_store_dim_etl
+          depends_on:
+            - task_key: gold_country_state_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_store_dim_etl
+            source: WORKSPACE
+        - task_key: gold_sales_fact_etl
+          depends_on:
+            - task_key: gold_customer_dim_etl
+            - task_key: gold_store_dim_etl
+            - task_key: gold_product_dim_etl
+            - task_key: gold_currency_dim_etl
+          notebook_task:
+            notebook_path: /Workspace/Users/kalaruheshan@gmail.com/rgu_research_dwh/gold/gold_sales_fact_etl
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
