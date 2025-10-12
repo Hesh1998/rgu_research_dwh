@@ -1,0 +1,20 @@
+resources:
+  jobs:
+    ETL_Scheduler:
+      name: ETL Scheduler
+      tasks:
+        - task_key: Bronze_Layer_ETL
+          run_job_task:
+            job_id: 422689764967184
+        - task_key: Silver_Layer_ETL
+          depends_on:
+            - task_key: Bronze_Layer_ETL
+          run_job_task:
+            job_id: 151201979146584
+        - task_key: Gold_Layer_ETL
+          depends_on:
+            - task_key: Silver_Layer_ETL
+          run_job_task:
+            job_id: 722342310070635
+      queue:
+        enabled: true
