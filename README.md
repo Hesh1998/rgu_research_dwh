@@ -1,6 +1,3 @@
-rgu_research_dwh-main is the source code from main GIT branch of rgu_research_dwh repository hosted on GitHub
-
-GitHub link - https://github.com/Hesh1998/rgu_research_dwh.git
 * This is the codebase for the Data Platform which was hosted on Databricks.
 * To run this code please follow below steps,
   1) Create a Workspace in Databricks
