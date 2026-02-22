@@ -5,4 +5,4 @@
   3) Create a SQL Warehouse Compute
   4) Run the DDL scripts in bronze, silver and gold folders using the Query Editor.ipynb file
   5) Create the Bronze Layer ETL, Silver Layer ETL, Gold Layer ETL and ETL Scheduler Pipelines on Databricks using the corresponding .yaml files.
-  6) Run the ETL Scheduler Pipeline to populate the Data Lakehouse unto Gold Layer.
+  6) Run the ETL Scheduler Pipeline to populate the Data Lakehouse upto Gold Layer.
